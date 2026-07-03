@@ -49,6 +49,11 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
+        "vercel": [
+            "@php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\"",
+            "@php composer-setup.php --install-dir=. --filename=composer",
+            "@php ./composer install --ignore-platform-reqs --no-dev --optimize-autoloader"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
