@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/index.php",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/(.*\\.(?:js|css|png|jpg|jpeg|gif|svg|woff2?|ttf|eot|ico))$",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/public/index.php"
+    }
+  ]
+}
