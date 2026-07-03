@@ -1,11 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "public/index.php",
-      "use": "@vercel/php"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
     }
-  ],
+  },
   "routes": [
     {
       "src": "^/(.*\\.(?:js|css|png|jpg|jpeg|gif|svg|woff2?|ttf|eot|ico))$",
@@ -13,7 +12,7 @@
     },
     {
       "src": "^/(.*)$",
-      "dest": "/public/index.php"
+      "dest": "/api/index.php"
     }
   ]
 }
